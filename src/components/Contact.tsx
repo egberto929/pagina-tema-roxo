@@ -12,7 +12,7 @@ export function Contact() {
 
     const whatsappMessage = `Olá, meu nome é ${name}, meu e-mail é ${email} e minha mensagem é: ${message}`;
 
-    const whatsappLink = `https://wa.me/5544999740602?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappLink = `https://wa.me/559999999?text=${encodeURIComponent(whatsappMessage)}`;
 
     window.open(whatsappLink, '_blank');
   };
