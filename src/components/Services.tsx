@@ -1,4 +1,3 @@
-import React from 'react';
 import { Palette, Code, Smartphone, Gauge } from 'lucide-react';
 
 export function Services() {

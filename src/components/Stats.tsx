@@ -1,4 +1,3 @@
-import React from 'react';
 import { Users, Code2, Award, Heart } from 'lucide-react';
 
 export function Stats() {

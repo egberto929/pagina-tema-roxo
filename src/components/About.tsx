@@ -1,4 +1,3 @@
-import React from 'react';
 import { Target, Users, Lightbulb, Rocket } from 'lucide-react';
 
 export function About() {
