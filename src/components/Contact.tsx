@@ -1,6 +1,22 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 export function Contact() {
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+
+    const name = (document.getElementById('name') as HTMLInputElement).value;
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const message = (document.getElementById('message') as HTMLTextAreaElement).value;
+
+
+    const whatsappMessage = `Olá, meu nome é ${name}, meu e-mail é ${email} e minha mensagem é: ${message}`;
+
+    const whatsappLink = `https://wa.me/5544999740602?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(whatsappLink, '_blank');
+  };
+
   return (
     <section id="contato" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
@@ -14,7 +30,7 @@ export function Contact() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                     Nome Completo
@@ -24,6 +40,7 @@ export function Contact() {
                     id="name"
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white"
                     placeholder="Seu nome"
+                    required
                   />
                 </div>
                 <div>
@@ -35,6 +52,7 @@ export function Contact() {
                     id="email"
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white"
                     placeholder="seu@email.com"
+                    required
                   />
                 </div>
                 <div>
@@ -46,13 +64,14 @@ export function Contact() {
                     rows={4}
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white"
                     placeholder="Sua mensagem"
+                    required
                   ></textarea>
                 </div>
                 <button
                   type="submit"
                   className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-6 rounded-lg transition-colors"
                 >
-                  Enviar Mensagem
+                  Enviar para o WhatsApp
                 </button>
               </form>
             </div>
