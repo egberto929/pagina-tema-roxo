@@ -10,7 +10,7 @@ export function Contact() {
     const message = (document.getElementById('message') as HTMLTextAreaElement).value;
 
 
-    const whatsappMessage = `Olá, meu nome é ${name}, meu e-mail é ${email} e minha mensagem é: ${message}`;
+    const whatsappMessage = `Olá, meu nome é ${name}, meu e-mail é ${email} e minha dúvida é: ${message}`;
 
     const whatsappLink = `https://wa.me/559999999?text=${encodeURIComponent(whatsappMessage)}`;
 
