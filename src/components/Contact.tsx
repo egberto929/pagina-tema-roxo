@@ -6,11 +6,10 @@ export function Contact() {
     event.preventDefault();
 
     const name = (document.getElementById('name') as HTMLInputElement).value;
-    const email = (document.getElementById('email') as HTMLInputElement).value;
     const message = (document.getElementById('message') as HTMLTextAreaElement).value;
 
 
-    const whatsappMessage = `Olá, meu nome é ${name}, meu e-mail é ${email} e minha dúvida é: ${message}`;
+    const whatsappMessage = `Olá, meu nome é ${name}, e minha dúvida é: ${message}`;
 
     const whatsappLink = `https://wa.me/559999999?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -40,18 +39,6 @@ export function Contact() {
                     id="name"
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white"
                     placeholder="Seu nome"
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                    E-mail
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white"
-                    placeholder="seu@email.com"
                     required
                   />
                 </div>
